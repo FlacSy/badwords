@@ -14,7 +14,7 @@ setup(
     url="https://github.com/FlacSy/badwords",
     packages=find_packages(),
     install_requires=[],
-    package_data={'bad_words': ['resurse/*','resurse/*/*']}, 
+    package_data={'bad_words': ['resource/*','resource/*/*']}, 
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
