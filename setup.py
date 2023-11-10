@@ -14,7 +14,7 @@ setup(
     url="https://github.com/FlacSy/bedwords",
     packages=find_packages(),
     install_requires=[],
-    package_data={'bdw': ['resurse/*','resurse/*/*']}, 
+    package_data={'bad_words': ['resurse/*','resurse/*/*']}, 
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
