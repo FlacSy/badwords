@@ -35,7 +35,7 @@ The core functionality of `badwords` is to check for obscene words in text.
 #### Example:
 
 ```python
-from badwords.check import Check
+from bad_words.check import Check
 
 # Create a filter for the Russian language
 filter_ru = Check(languages=['ru'])
@@ -55,7 +55,7 @@ You can filter and remove obscene words from text, or replace them with a specif
 #### Example:
 
 ```python
-from badwords.delete import Delete
+from bad_words.delete import Delete
 
 # Create a filter for the Russian language
 filter = Delete(languages=['ru'])
@@ -75,7 +75,7 @@ print(filtered_text)
 #### Example:
 
 ```python
-from badwords.analyzer import SentimentAnalyzer
+from bad_words.analyzer import SentimentAnalyzer
 
 # Create a sentiment analyzer for all supported languages
 analyzer = SentimentAnalyzer(all_languages=True)
@@ -96,7 +96,7 @@ You can extract keywords from a given text using the `KeywordExtractor` module.
 #### Example:
 
 ```python
-from badwords.keyword_extractor import KeywordExtractor
+from bad_words.keyword_extractor import KeywordExtractor
 
 # Create a keyword extractor
 extractor = KeywordExtractor()
@@ -116,7 +116,7 @@ print("Keywords:", keywords)
 #### Example:
 
 ```python
-from badwords.plagiarism_checker import PlagiarismChecker
+from bad_words.plagiarism_checker import PlagiarismChecker
 
 # Initialize the PlagiarismChecker with a query and the number of pages to search
 query = input('Enter a search query: ')
