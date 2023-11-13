@@ -11,6 +11,7 @@
    - [3. Sentiment Analysis](#3-sentiment-analysis)
    - [4. Keyword Extraction](#4-keyword-extraction)
    - [5. Plagiarism Checker](#5-plagiarism-checker)
+   - [6. Image Profanity Filtering](#6-image-profanity-filtering)  
 3. [Advanced Usage](#advanced-usage)
    - [1. Customizing Bad Word Lists](#1-customizing-bad-word-lists)
    - [2. Loading and Unloading Word Lists](#2-loading-and-unloading-word-lists)
@@ -35,7 +36,7 @@ The core functionality of `badwords` is to check for obscene words in text.
 #### Example:
 
 ```python
-from bad_words.check import Check
+from badwords.check import Check
 
 # Create a filter for the Russian language
 filter_ru = Check(languages=['ru'])
@@ -55,7 +56,7 @@ You can filter and remove obscene words from text, or replace them with a specif
 #### Example:
 
 ```python
-from bad_words.delete import Delete
+from badwords.delete import Delete
 
 # Create a filter for the Russian language
 filter = Delete(languages=['ru'])
@@ -75,7 +76,7 @@ print(filtered_text)
 #### Example:
 
 ```python
-from bad_words.analyzer import SentimentAnalyzer
+from badwords.analyzer import SentimentAnalyzer
 
 # Create a sentiment analyzer for all supported languages
 analyzer = SentimentAnalyzer(all_languages=True)
@@ -96,7 +97,7 @@ You can extract keywords from a given text using the `KeywordExtractor` module.
 #### Example:
 
 ```python
-from bad_words.keyword_extractor import KeywordExtractor
+from badwords.keyword_extractor import KeywordExtractor
 
 # Create a keyword extractor
 extractor = KeywordExtractor()
@@ -116,7 +117,7 @@ print("Keywords:", keywords)
 #### Example:
 
 ```python
-from bad_words.plagiarism_checker import PlagiarismChecker
+from badwords.plagiarism_checker import PlagiarismChecker
 
 # Initialize the PlagiarismChecker with a query and the number of pages to search
 query = input('Enter a search query: ')
@@ -128,6 +129,23 @@ if checker.check_plagiarism():
     print("Plagiarism detected!")
 else:
     print("No plagiarism detected.")
+```
+
+### 6. Image Profanity Filtering  
+
+```python
+from badwords.image import ProfanityFilter 
+
+profanity_filter = ProfanityFilter(all_languages=True)
+
+image_path = '/path/to/your/image.png'
+
+profanity_found = profanity_filter.filter_profanity_from_image(image_path)
+
+if profanity_found:
+    print("Profanity found in the image.")
+else:
+    print("No profanity found in the image.")
 ```
 
 ## Advanced Usage

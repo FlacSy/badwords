@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setup(
     name="badwords",
-    version="1.0.0",
+    version="1.1.0",
     author="FlacSy",
     author_email="flacsy.x@gmail.com",
     description="This library is needed to check text for bad words in different languages.",
@@ -13,7 +13,9 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/FlacSy/badwords",
     packages=find_packages(),
-    install_requires=[],
+    install_requires=[
+        'easyocr',
+                      ],
     package_data={'bad_words': ['resource/*','resource/*/*']}, 
     classifiers=[
         "Programming Language :: Python :: 3",
