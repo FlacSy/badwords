@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setup(
     name="badwords",
-    version="1.1.0",
+    version="1.1.1",
     author="FlacSy",
     author_email="flacsy.x@gmail.com",
     description="This library is needed to check text for bad words in different languages.",
