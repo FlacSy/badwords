@@ -20,13 +20,13 @@ class ProfanityFilter:
             languages = list(self.language_files.keys())
 
         # Initialize a dictionary of bad words for the specified languages
-        self.bad_words: Dict[str, List[str]] = self.initialize_bad_words(languages)
+        self.bad_words: Dict[str, set] = self.initialize_bad_words(languages)
 
         # Compile regular expressions for matching bad words
         self.patterns: Dict[str, re.Pattern] = self.compile_patterns()
 
-        # Load the OCR reader from easyocr
-        self.reader = easyocr.Reader(['ru'])  # You can replace 'ru' with the desired language code
+        # Lazy-loading of OCR reader
+        self.reader = None
 
     def initialize_language_files(self) -> Dict[str, str]:
         language_files = {}
@@ -39,14 +39,14 @@ class ProfanityFilter:
             language_files[language_code] = file_path
         return language_files
 
-    def initialize_bad_words(self, languages: List[str]) -> Dict[str, List[str]]:
+    def initialize_bad_words(self, languages: List[str]) -> Dict[str, set]:
         bad_words = {}
         for language in languages:
             file_path = self.language_files.get(language)
             if file_path is not None:
                 with open(file_path, 'r', encoding='utf-8') as file:
-                    # Store bad words as a list of strings, removing leading/trailing whitespaces
-                    bad_words[language] = [line.strip() for line in file]
+                    # Store bad words as a set of strings, removing leading/trailing whitespaces
+                    bad_words[language] = {line.strip() for line in file}
         return bad_words
 
     def compile_patterns(self) -> Dict[str, re.Pattern]:
@@ -55,9 +55,16 @@ class ProfanityFilter:
             patterns[language] = re.compile(r'\b(?:' + '|'.join(re.escape(word) for word in words) + r')\b', re.IGNORECASE)
         return patterns
 
+    def lazy_load_ocr_reader(self):
+        if self.reader is None:
+            self.reader = easyocr.Reader(['ru'])  
+
     def filter_profanity_from_image(self, image_path: str, language: str = 'ru') -> bool:
         if language not in self.language_files:
             raise ValueError(f'Unsupported language: {language}')
+
+        # Lazy-load OCR reader
+        self.lazy_load_ocr_reader()
 
         # Use easyocr to recognize text from the image
         results = self.reader.readtext(image_path)
