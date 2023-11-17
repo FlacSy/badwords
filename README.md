@@ -136,11 +136,11 @@ else:
 ```python
 from badwords.image import ProfanityFilter 
 
-profanity_filter = ProfanityFilter(all_languages=True)
+profanity_filter = ProfanityFilter()
 
 image_path = '/path/to/your/image.png'
 
-profanity_found = profanity_filter.filter_profanity_from_image(image_path)
+profanity_found = profanity_filter.filter_profanity_from_image(image_path, language='en')
 
 if profanity_found:
     print("Profanity found in the image.")
