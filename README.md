@@ -12,6 +12,7 @@
    - [4. Keyword Extraction](#4-keyword-extraction)
    - [5. Plagiarism Checker](#5-plagiarism-checker)
    - [6. Image Profanity Filtering](#6-image-profanity-filtering)  
+   - [7. Image Obscenity Check](#7-image-obscenity-check)
 3. [Advanced Usage](#advanced-usage)
    - [1. Customizing Bad Word Lists](#1-customizing-bad-word-lists)
    - [2. Loading and Unloading Word Lists](#2-loading-and-unloading-word-lists)
