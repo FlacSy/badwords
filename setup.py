@@ -15,6 +15,8 @@ setup(
     packages=find_packages(),
     install_requires=[
         'easyocr',
+        'numpy',
+        'tensorflow'
                       ],
     package_data={'bad_words': ['resource/*','resource/*/*']}, 
     classifiers=[

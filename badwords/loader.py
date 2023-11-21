@@ -4,7 +4,7 @@ import shutil
 class Load:
     def __init__(self) -> None:
         # Get the path to the directory of the current script
-        self.script_dir = os.path.dirname(os.path.realpath(__file__)
+        self.script_dir = os.path.dirname(os.path.realpath(__file__))
         
         # Define directories for bad words and good words resources
         self.resource_dir_bad_words = os.path.join(self.script_dir, 'resource/bad_words')
