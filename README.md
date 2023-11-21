@@ -134,7 +134,7 @@ else:
 ### 6. Image Profanity Filtering  
 
 ```python
-from badwords.image import ProfanityFilter 
+from badwords.image_check import ProfanityFilter 
 
 profanity_filter = ProfanityFilter()
 
@@ -147,7 +147,21 @@ if profanity_found:
 else:
     print("No profanity found in the image.")
 ```
+### 7. Image Obscenity Check 
+```python
+from badwords.image_obscenity import ProfanityFilter 
 
+image_classifier = ImageClassifier()
+
+image_path = '/path/to/your/image.png'
+
+result = image_classifier.classify_image(image_path)
+
+if result:
+    print("Obscenity found in the image.")
+else:
+    print("No obscenity found in the image.")
+```
 ## Advanced Usage
 
 ### 1. Customizing Bad Word Lists

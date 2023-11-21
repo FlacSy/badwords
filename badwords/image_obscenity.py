@@ -41,11 +41,3 @@ class ImageClassifier:
             return True
         else:
             return False
-
-
-if __name__ == "__main__":
-    # Example usage
-    image_classifier = ImageClassifier()
-    image_path = 'test_img4.png'
-    result = image_classifier.classify_image(image_path)
-    print(bool(result))
