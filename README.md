@@ -150,7 +150,7 @@ else:
 ```
 ### 7. Image Obscenity Check 
 ```python
-from badwords.image_obscenity import ProfanityFilter 
+from badwords.image_obscenity import ImageClassifier 
 
 image_classifier = ImageClassifier()
 
