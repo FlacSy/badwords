@@ -18,7 +18,7 @@ setup(
         'numpy',
         'torch'
                       ],
-    package_data={'bad_words': ['resource/*','resource/*/*']}, 
+    package_data={'badwords': ['resource/*','resource/*/*']}, 
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
