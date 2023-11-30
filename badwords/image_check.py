@@ -42,10 +42,11 @@ class ProfanityFilter:
                     bad_words[language] = {line.strip() for line in file}
         return bad_words
 
-    def compile_patterns(self) -> Dict[str, re.Pattern]:
+    def compile_patterns(self, case_insensitive: bool = True) -> Dict[str, re.Pattern]:
         patterns = {}
+        flags = re.IGNORECASE if case_insensitive else 0
         for language, words in self.bad_words.items():
-            patterns[language] = re.compile(r'\b(?:' + '|'.join(re.escape(word) for word in words) + r')\b', re.IGNORECASE)
+            patterns[language] = re.compile(r'(?:^|\s)(?:' + '|'.join(re.escape(word) for word in words) + r')(?=\s|$)', flags)
         return patterns
 
     def lazy_load_ocr_reader(self, languages: List[str]):

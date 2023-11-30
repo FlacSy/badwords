@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setup(
     name="badwords",
-    version="1.1.1",
+    version="1.1.2",
     author="FlacSy",
     author_email="flacsy.x@gmail.com",
     description="This is a library for effective moderation of content.Text cleaning, filtering obsceneity, mood analysis and even checking images on obscenity",
