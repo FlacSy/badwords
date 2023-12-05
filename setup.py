@@ -24,4 +24,7 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    license="MIT",
+    include_package_data=True,
+    keywords=["moderation", "content filtering", "obscenity detection", "mood analysis", "image moderation"],
 )

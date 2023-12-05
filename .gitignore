@@ -1,2 +1,3 @@
 .libtest
 .vscode
+.pytest_cache
