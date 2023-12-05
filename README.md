@@ -118,7 +118,7 @@ print("Keywords:", keywords)
 #### Example:
 
 ```python
-from badwords.plagiarism_checker import PlagiarismChecker
+from badwords.plagiarism import PlagiarismChecker
 
 # Initialize the PlagiarismChecker with a query and the number of pages to search
 query = input('Enter a search query: ')

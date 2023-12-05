@@ -16,7 +16,10 @@ setup(
     install_requires=[
         'easyocr',
         'numpy',
-        'torch'
+        'torch',
+        'googlesearch',
+        'bs4',
+        'requests'
                       ],
     package_data={'badwords': ['resource/*','resource/*/*']}, 
     classifiers=[
