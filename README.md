@@ -98,7 +98,7 @@ You can extract keywords from a given text using the `KeywordExtractor` module.
 #### Example:
 
 ```python
-from badwords.keyword_extractor import KeywordExtractor
+from badwords.keyword import KeywordExtractor
 
 # Create a keyword extractor
 extractor = KeywordExtractor()

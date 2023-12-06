@@ -38,7 +38,7 @@ class Check:
     def initialize_bad_words(self, languages: List[str]) -> Dict[str, List[str]]:
         bad_words = {}
         for language in languages:
-            file_path = self.language_files.get(language)
+            file_path = self.language_files.get(f"{language}.bdw")
             if file_path is not None:
                 with open(file_path, 'r', encoding='utf-8') as file:
                     # Store bad words as a list of strings, removing leading/trailing whitespaces

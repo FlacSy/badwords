@@ -45,7 +45,7 @@ class SentimentAnalyzer:
     def initialize_keywords(self, languages: List[str]) -> Dict[str, List[str]]:
         bad_keywords = {}
         for language in languages:
-            file_path = self.language_files.get(language)
+            file_path = self.language_files.get(f"{language}.bdw")
 
             if file_path is not None:
                 with open(file_path, 'r', encoding='utf-8') as file:
