@@ -184,6 +184,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Links
 
 - [GitHub repository](https://github.com/FlacSy/badwords)
-- [Discord server](https://discord.gg/c4yNwz3uqZ)
+- [Telegram](https://t.me/it_ygolok)
 
 Feel free to explore and utilize the various features of `badwords` for your text processing and content moderation needs.
