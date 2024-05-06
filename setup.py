@@ -17,7 +17,7 @@ setup(
         'easyocr',
         'numpy',
         'torch',
-        'googlesearch',
+        'googlesearch-python',
         'bs4',
         'requests'
                       ],
