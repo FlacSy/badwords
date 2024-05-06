@@ -20,7 +20,7 @@ class Check:
         # Compile regular expressions for matching bad words
         self.patterns: Dict[str, re.Pattern] = self.compile_patterns()
 
-        
+        self.custom_bad_words: List[str] = []
 
     def initialize_language_files(self) -> Dict[str, str]:
         language_files = {}
@@ -50,13 +50,20 @@ class Check:
             patterns[language] = re.compile(r'\b(?:' + '|'.join(re.escape(word) for word in words) + r')\b', re.IGNORECASE)
         return patterns
 
+    def add_words(self, words: List[str]):
+        self.custom_bad_words.extend(words)
+
     def filter_profanity(self, text: str) -> bool:
+        all_bad_words = self.custom_bad_words
         for language in self.languages:
             if language not in self.language_files:
                 raise ValueError(f'Unsupported language: {language}')
             if language not in self.patterns:
                 return False
             
-            if self.patterns[language].search(text):
+            all_bad_words.extend(self.bad_words.get(language, []))
+
+        for bad_word in all_bad_words:
+            if bad_word.lower() in text.lower():
                 return True
         return False
