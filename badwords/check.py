@@ -59,7 +59,7 @@ class Check:
             if language not in self.language_files:
                 raise ValueError(f'Unsupported language: {language}')
             if language not in self.patterns:
-                return False
+                raise ValueError(f'Patterns not compiled for language: {language}')
             
             all_bad_words.extend(self.bad_words.get(language, []))
 
